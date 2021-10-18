@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Khadok</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+
+<body class="text-center mt-5">
+<p class="text-center" style="font-weight: bold; font-size: 22px;"> Wanna take pizza..? then hover on burger..!! </p>
+<img id="news" onmouseover="onHover();" onmouseout="offHover();" height="500px" width="500px" class="img-fluid"
+     src="./img/image1.jpeg"></a>
+<h5 id="para" class="mt-2" style="color: red; font-weight: bold;"> Click On Button To Eat at Night Mode </h5>
+<div>
+    <button id="a" onclick="darkFun()" class="btn btn-warning"> Dark Mode</button>
+</div>
+</body>
+<script>
+    //for image hover
+    function onHover() {
+        $("#news").attr('src', './img/img3.jpg').css('border-radius', '60%');
+    }
+
+    function offHover() {
+        $("#news").attr('src', './img/image1.jpeg');
+    }
+
+    //for dark mode
+    function darkFun() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+
+    }
+
+    // for button
+    let isShown = false;
+    a = document.getElementById("a");
+    p = document.getElementById("para");
+    a.addEventListener("click", function () {
+
+        if (isShown) {
+            a.innerHTML = "Dark Mode";
+            p.innerHTML = "Click On Button To Eat at Dark Mode";
+            isShown = false;
+        }
+        else {
+            a.innerHTML = "Light Mode";
+            p.innerHTML = "Click On Button To Eat at Light Mode";
+            isShown = true;
+
+        }
+
+    });
+
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+</script>
+</html>
